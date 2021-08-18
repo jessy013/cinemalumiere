@@ -1,8 +1,11 @@
 <?php
 namespace app\Service;
 
-use Doctrine\ORM\EntityManagerInterface;
+
+use App\Entity\Genre;
 use App\Entity\ICrud;
+use Doctrine\ORM\EntityManagerInterface;
+
 
 class GenreService implements ICrud
 {
@@ -12,11 +15,40 @@ class GenreService implements ICrud
        $this->entityManager = $em;
 
    }
+
+    function ajouter($pIntitule)
+   {
+       $Genre = Genre::create($pIntitule);
+       $this->entityManager->persist($Genre);
+       $this->entityManager->flush();
+   }
 	/**
 	 *
 	 * @return mixed
 	 */
-	function liste() {
+	function liste() 
+    {
+        return $this->entityManager->getRepository(Genre::class)->findAll();
+    }
+	
+	/**
+	 *
+	 * @param mixed $pId 
+	 *
+	 * @return mixed
+	 */
+	function lire($pId) 
+    {
+        return $this->entityManager->getRepository(genre::class)->find($pId);
+    }
+	
+	/**
+	 *
+	 * @return mixed
+	 */
+	function sauvegarder() 
+    {
+
 	}
 	
 	/**
@@ -25,22 +57,8 @@ class GenreService implements ICrud
 	 *
 	 * @return mixed
 	 */
-	function lire($pId) {
-	}
-	
-	/**
-	 *
-	 * @return mixed
-	 */
-	function sauvegarder() {
-	}
-	
-	/**
-	 *
-	 * @param mixed $pId 
-	 *
-	 * @return mixed
-	 */
-	function supprimer($pId) {
+	function supprimer($pId) 
+    {
+
 	}
 }
