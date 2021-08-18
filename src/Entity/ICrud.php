@@ -8,3 +8,11 @@ interface ICrud
     public function sauvegarder();
     public function supprimer($pId);
 }
+
+
+ 
+
+
+
+
+
