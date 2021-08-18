@@ -8,29 +8,30 @@ use App\Entity\ICrud;
 class FilmService implements ICrud
 {
     private $entityManager;
-    function __construct(EntityManagerInterface $em)
+    public function __construct(EntityManagerInterface $em)
     {
         $this->entityManager = $em;
     }
-    function ajouter($pTitre, $pResume, $AnneeProduction, $pRealistaeur, $pListeActeur, $pImageUrl)
+    public function ajouter($pTitre, $pResume, $AnneeProduction, $pRealistaeur, $pListeActeur, $pImageUrl)
     {
+        //la fonction static permet d'éviter de devoir instantier le film avec le construcetur pars defaut
         $film = film::create($pTitre, $pResume, $AnneeProduction, $pRealistaeur, $pListeActeur, $pImageUrl);
         $this->entityManager->persist($film);
         $this->entityManager->flush();
     }
-    function supprimer($pId)
+    public function supprimer($pId)
     {
 
     }
-    function liste()
+    public function liste()
     {
        return $this->entityManager->getRepository(film::class)->findAll();
     }
-    function lire($pId)
+    public function lire($pId)
     {
         return $this->entityManager->getRepository(film::class)->find($pId);
     }
-    function sauvegarder()
+    public function sauvegarder()
     {
 
     }
