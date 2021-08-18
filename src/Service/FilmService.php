@@ -24,11 +24,11 @@ class FilmService
     }
     function recupererlist()
     {
-
+       return $this->entityManager->getRepository(film::class)->findAll();
     }
-    function recupererFilm()
+    function recupererFilm($pId)
     {
-
+        return $this->entityManager->getRepository(film::class)->find($pId);
     }
     function sauvegarder()
     {
