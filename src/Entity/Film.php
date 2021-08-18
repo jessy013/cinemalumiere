@@ -59,9 +59,16 @@ class Film
      */
     private $seances;
 
-    public function __construct()
+    public function __construct($pTitre,$pResume,$AnneeProduction,$pRealistaeur,$pListeActeur,$pGenre,$pImageUrl)
     {
         $this->seances = new ArrayCollection();
+        $this->titre = $pTitre;
+        $this->resume = $pResume;
+        $this->anneeProduction = $AnneeProduction;
+        $this->realisateur = $pRealistaeur;
+        $this->listeActeur = $pListeActeur;
+        $this->genre = $pGenre;
+        $this->imageUrl = $pImageUrl;
     }
 
     public function getId(): ?int

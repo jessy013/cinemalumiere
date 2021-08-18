@@ -11,7 +11,7 @@ class FilmService
     {
         $this->entityManager = $em;
     }
-    function ajouter()
+    function ajouter($film)
     {
 
     }
@@ -31,5 +31,5 @@ class FilmService
     {
 
     }
-    
+
 }
