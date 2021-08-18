@@ -25,7 +25,7 @@ class FilmService
     {
        return $this->entityManager->getRepository(film::class)->findAll();
     }
-    function recupererFilm($pId)
+    function LireFilm($pId)
     {
         return $this->entityManager->getRepository(film::class)->find($pId);
     }
