@@ -1,5 +1,5 @@
 <?php
-namespace app\Service;
+namespace App\Service;
 
 
 use App\Entity\Genre;
