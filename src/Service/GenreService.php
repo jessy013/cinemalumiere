@@ -18,8 +18,8 @@ class GenreService implements ICrud
 
     function ajouter($pIntitule)
    {
-       $Genre = Genre::create($pIntitule);
-       $this->entityManager->persist($Genre);
+       $genre = Genre::create($pIntitule);
+       $this->entityManager->persist($genre);
        $this->entityManager->flush();
    }
 	/**
@@ -49,7 +49,7 @@ class GenreService implements ICrud
 	function sauvegarder() 
     {
 
-	}
+    }
 	
 	/**
 	 *
