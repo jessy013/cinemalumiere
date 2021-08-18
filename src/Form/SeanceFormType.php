@@ -6,6 +6,7 @@ use App\Entity\Seance;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class SeanceFormType extends AbstractType
 {
@@ -15,6 +16,7 @@ class SeanceFormType extends AbstractType
             ->add('dateDebut')
             ->add('dateFin')
             ->add('film')
+               ->add('save', SubmitType::class, ['label' => 'Créer une seance'])
         ;
     }
 

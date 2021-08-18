@@ -6,6 +6,7 @@ use App\Entity\Film;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class FilmFormType extends AbstractType
 {
@@ -19,6 +20,7 @@ class FilmFormType extends AbstractType
             ->add('listeActeur')
             ->add('imageUrl')
             ->add('genre')
+            ->add('save', SubmitType::class, ['label' => 'Créer un film'])
         ;
     }
 
