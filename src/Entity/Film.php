@@ -59,15 +59,16 @@ class Film
      */
     private $seances;
 
-    public function __construct($pTitre,$pResume,$AnneeProduction,$pRealistaeur,$pListeActeur,$pImageUrl)
+    public static function create($pTitre,$pResume,$AnneeProduction,$pRealistaeur,$pListeActeur,$pImageUrl)
     {
-        $this->seances = new ArrayCollection();
-        $this->titre = $pTitre;
-        $this->resume = $pResume;
-        $this->anneeProduction = $AnneeProduction;
-        $this->realisateur = $pRealistaeur;
-        $this->listeActeur = $pListeActeur;
-        $this->imageUrl = $pImageUrl;
+        $film = new film ();
+        $film->seances = new ArrayCollection();
+        $film->titre = $pTitre;
+        $film->resume = $pResume;
+        $film->anneeProduction = $AnneeProduction;
+        $film->realisateur = $pRealistaeur;
+        $film->listeActeur = $pListeActeur;
+        $film->imageUrl = $pImageUrl;
     }
 
     public function getId(): ?int
