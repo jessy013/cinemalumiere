@@ -33,6 +33,10 @@ class Genre
     {
         $this->films = new ArrayCollection();
     }
+    public function create()
+    {
+        
+    }
 
     public function getId(): ?int
     {
