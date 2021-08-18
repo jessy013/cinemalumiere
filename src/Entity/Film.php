@@ -59,7 +59,7 @@ class Film
      */
     private $seances;
 
-    public function __construct($pTitre,$pResume,$AnneeProduction,$pRealistaeur,$pListeActeur,$pGenre,$pImageUrl)
+    public function __construct($pTitre,$pResume,$AnneeProduction,$pRealistaeur,$pListeActeur,$pImageUrl)
     {
         $this->seances = new ArrayCollection();
         $this->titre = $pTitre;
@@ -67,7 +67,6 @@ class Film
         $this->anneeProduction = $AnneeProduction;
         $this->realisateur = $pRealistaeur;
         $this->listeActeur = $pListeActeur;
-        $this->genre = $pGenre;
         $this->imageUrl = $pImageUrl;
     }
 
