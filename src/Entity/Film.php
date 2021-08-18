@@ -69,6 +69,7 @@ class Film
         $film->realisateur = $pRealistaeur;
         $film->listeActeur = $pListeActeur;
         $film->imageUrl = $pImageUrl;
+        return $film;
     }
 
     public function getId(): ?int

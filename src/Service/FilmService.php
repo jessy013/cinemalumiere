@@ -15,6 +15,8 @@ class FilmService
     function ajouter($pTitre, $pResume, $AnneeProduction, $pRealistaeur, $pListeActeur, $pImageUrl)
     {
         $film = film::create($pTitre, $pResume, $AnneeProduction, $pRealistaeur, $pListeActeur, $pImageUrl);
+        $this->entityManager->persist($film);
+        $this->entityManager->flush();
     }
     function supprimer()
     {
