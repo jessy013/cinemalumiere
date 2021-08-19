@@ -61,7 +61,9 @@ class AdministrationController extends AbstractController
         
     }
 
-        
+        /**
+         * @route("administration/films/add", name="admin_creer_film")
+         */
             public function creerFilms(FilmService $pFilmService)
             {
                 $film = new Film();
