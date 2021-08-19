@@ -73,7 +73,7 @@ class Seance
 
         return $this;
     }
-    public function create($pDateDebut,$pDateFin)
+    public static function creer($pDateDebut,$pDateFin)
     {
         $seance = new Seance();
         $seance->dateDebut = $pDateDebut;

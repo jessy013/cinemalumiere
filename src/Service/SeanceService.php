@@ -1,9 +1,10 @@
 <?php
 namespace App\Service;
 
+
+use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\ICrud;
 use App\Entity\Seance;
-use Doctrine\ORM\EntityManagerInterface;
 
 
 class SeanceService implements ICrud
@@ -13,22 +14,24 @@ class SeanceService implements ICrud
     {
         $this->entityManager =$em;
     }
-    public static function create($pDateDebut,$pDateFin)
+    public static function creer($pDateDebut,$pDateFin)
     {
         $Seance = new Seance();
         $Seance->dateDebut = $pDateDebut;
         $Seance->dateFin = $pDateFin;
         return $Seance;
     }
-    public function ajouter($pDateDebut,$pDateFin)
+    public function ajouter($pData)
     {
-        $seance = Seance::create($pDateDebut,$pDateFin);
-        $this->entityManager->persist($seance);
-        $this->entityManager->flush();
-    }
-    public function liste()
-    {
-         return $this->entityManager->getRepository(Seance::class)->findAll();
+        // la fonction static permet d'éviter de devoir instantier le film avec le
+        // constructeur par défaut
+        $seance = Seance::creer($pData->getDateFin(),
+        $pData->getDateDebut(),
+        $this->entityManager->persist($pData),
+        $this->entityManager->flush(),
+    );
+    
+        return $this->entityManager->getRepository(Seance::class)->findAll();
     }
     public function lire($pId)
     {

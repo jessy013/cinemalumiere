@@ -38,7 +38,7 @@ class AdministrationController extends AbstractController
     /**
      * @Route("administration/genres/add",name="admin_creer_genre")
      */
-    public function creerGenres(GenreService $genreService):Response
+    public function creerGenres(GenreService $pGenreService):Response
     {
         $genre = new Genre();
         
@@ -53,12 +53,18 @@ class AdministrationController extends AbstractController
             $pGenreService->ajouter($formulaire->getData());
             return $this->redirectToRoute('task_success');
 
+        }
+        else   
         return $this->render('administration/genres/form_genres.html.twig', [
             'formulaire' => $formulaire->createView()]);
-        }
-        public function creerFilms(FilmService $pFilmService)
-        {
-            $film = new Film();
+        
+        
+    }
+
+        
+            public function creerFilms(FilmService $pFilmService)
+            {
+                $film = new Film();
             $formulaire = $this->createForm(FilmFormType::class,$film);
             $request = Request::createFromGlobals();
             $formulaire->handleRequest($request);
@@ -68,7 +74,7 @@ class AdministrationController extends AbstractController
             $pFilmService->ajouter($formulaire->getData());
             return $this->redirectToRoute('task_success');
 
-        }
+            }
         else
             return $this->render('administration/films/form_films.html.twig',
             ['formulaire' => $formulaire->createView()]);
@@ -86,7 +92,7 @@ class AdministrationController extends AbstractController
 /**
  * @Route("administration/seances/add", name="admin_creer_seance")
  */
-        public function creerSeances(SeanceService $pSeanceService)
+     public function creerSeances(SeanceService $pSeanceService)
     {
         
         $seance = new Seance();
