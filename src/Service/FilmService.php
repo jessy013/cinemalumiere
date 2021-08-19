@@ -12,10 +12,16 @@ class FilmService implements ICrud
     {
         $this->entityManager = $em;
     }
-    public function ajouter($pTitre, $pResume, $AnneeProduction, $pRealistaeur, $pListeActeur, $pImageUrl)
+   public function ajouter($pData)
     {
-        //la fonction static permet d'éviter de devoir instantier le film avec le construcetur pars defaut
-        $film = film::create($pTitre, $pResume, $AnneeProduction, $pRealistaeur, $pListeActeur, $pImageUrl);
+        // la fonction static permet d'éviter de devoir instantier le film avec le
+        // constructeur par défaut
+        $film = Film::creer($pData->getTitre(),
+        $pData->getResume(),
+        $pData->getAnneeProduction(),
+        $pData->getRealisateur(),
+        $pData->getListeActeurs(),
+        $pData->getImageUrl());
         $this->entityManager->persist($film);
         $this->entityManager->flush();
     }

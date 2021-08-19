@@ -59,7 +59,7 @@ class Film
      */
     private $seances;
 
-    public static function create($pTitre,$pResume,$AnneeProduction,$pRealistaeur,$pListeActeur,$pImageUrl)
+    public static function creer($pTitre,$pResume,$AnneeProduction,$pRealistaeur,$pListeActeur,$pImageUrl)
     {
         $film = new film ();
         $film->seances = new ArrayCollection();
