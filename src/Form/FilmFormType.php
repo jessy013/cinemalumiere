@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class FilmFormType extends AbstractType
 {
@@ -14,7 +15,7 @@ class FilmFormType extends AbstractType
     {
         $builder
             ->add('titre')
-            ->add('resume')
+            ->add('resume',TextareaType::class)
             ->add('anneeProduction')
             ->add('realisateur')
             ->add('listeActeur')

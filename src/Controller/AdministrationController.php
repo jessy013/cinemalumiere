@@ -36,7 +36,7 @@ class AdministrationController extends AbstractController
         
     }
     /**
-     * @Route("administration/genres/add",name="admin_creer_genre")
+     * @Route("administration/Genres/add",name="admin_creer_genre")
      */
     public function creerGenres(GenreService $pGenreService):Response
     {
