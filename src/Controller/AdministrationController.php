@@ -27,6 +27,9 @@ class AdministrationController extends AbstractController
             'controller_name' => 'AdministrationController',
         ]);
     }
+    /**
+     * @Route("/administration/genres", name="admin_liste_genre")
+     */
     public function listeGenre(GenreService $genreService ):response
     {
         $genres = $genreService->liste();
