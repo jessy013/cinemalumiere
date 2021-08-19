@@ -3,7 +3,6 @@ namespace App\Service;
 
 use App\Entity\ICrud;
 use App\Entity\Seance;
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 
 class SeanceService implements ICrud
