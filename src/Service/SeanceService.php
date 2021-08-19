@@ -31,8 +31,12 @@ class SeanceService implements ICrud
         $this->entityManager->flush(),
     );
     
+    }
+    public function liste()
+    {
         return $this->entityManager->getRepository(Seance::class)->findAll();
     }
+    
     public function lire($pId)
     {
         return $this->entityManager->getRepository(Seance::class)->find($pId);
