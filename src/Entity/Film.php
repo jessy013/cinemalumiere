@@ -59,14 +59,14 @@ class Film
      */
     private $seances;
 
-    public static function creer($pTitre,$pResume,$AnneeProduction,$pRealistaeur,$pListeActeur,$pImageUrl)
+    public static function creer($pTitre,$pResume,$AnneeProduction,$pRealisateur,$pListeActeur,$pImageUrl)
     {
         $film = new film ();
         $film->seances = new ArrayCollection();
         $film->titre = $pTitre;
         $film->resume = $pResume;
         $film->anneeProduction = $AnneeProduction;
-        $film->realisateur = $pRealistaeur;
+        $film->realisateur = $pRealisateur;
         $film->listeActeur = $pListeActeur;
         $film->imageUrl = $pImageUrl;
         return $film;
@@ -189,5 +189,9 @@ class Film
         }
 
         return $this;
+    }
+    function __toString()
+    {
+        return $this->titre." (".$this->anneeProduction.")";
     }
 }

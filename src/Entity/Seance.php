@@ -80,4 +80,8 @@ class Seance
         $seance->dateFin = $pDateFin;
         return $seance;
     }
+       function __toString()
+    {
+        return $this->dateDebut.$this->dateFin.$this->film->getTitre();
+    }
 }

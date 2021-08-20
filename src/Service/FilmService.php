@@ -20,7 +20,7 @@ class FilmService implements ICrud
         $pData->getResume(),
         $pData->getAnneeProduction(),
         $pData->getRealisateur(),
-        $pData->getListeActeurs(),
+        $pData->getListeActeur(),
         $pData->getImageUrl());
         $this->entityManager->persist($film);
         $this->entityManager->flush();

@@ -87,4 +87,8 @@ class Genre
 
         return $this;
     }
+    function __toString()
+    {
+        return $this->intitule;
+    }
 }

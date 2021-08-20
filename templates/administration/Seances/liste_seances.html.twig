@@ -13,7 +13,7 @@
 <ul>
     {% for seance in seances %}
     <li>
-    {{seance.date}}
+    {{seance.dateDebut|format_datetime()}} à {{seance.dateFin|format_datetime()}}
     </li>
     {% endfor %}
     </ul>

@@ -63,7 +63,16 @@ class AdministrationController extends AbstractController
         
         
     }
-
+     /**
+     * @Route("administration/films",name="admin_liste_films")
+     */
+    public function listeFilm(FilmService $pFilmService):Response
+    {
+        $films = $pFilmService->liste();
+        return $this->render('administration/films/liste_films.html.twig', [
+            'films' => $films
+        ]);
+    }
         /**
          * @route("administration/films/add", name="admin_creer_film")
          */
@@ -90,7 +99,7 @@ class AdministrationController extends AbstractController
     public function listeSeances(SeanceService $pSeanceService):Response
     {
         $seances = $pSeanceService->liste();
-        return $this->render('administration/genres/liste_seances.html.twig', [
+        return $this->render('administration/seances/liste_seances.html.twig', [
             'seances' => $seances
         ]);
     }
@@ -114,5 +123,15 @@ class AdministrationController extends AbstractController
         else
         return $this->render('administration/seances/form_seances.html.twig',
         ['formulaire' => $formulaire->createView()]);
+    }
+    
+    /**
+     * @Route("/success", name="task_success")
+     */
+    public function success(): Response
+    {
+        return $this->render('administration/succes.html.twig', [
+            'controller_name' => 'AdministrationController',
+        ]);
     }
 }
